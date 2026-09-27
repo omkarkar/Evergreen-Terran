@@ -1,0 +1,23 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+
+# Node / Next.js
+node_modules/
+.next/
+
+# Large ML model files
+*.joblib
+*.pkl
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db

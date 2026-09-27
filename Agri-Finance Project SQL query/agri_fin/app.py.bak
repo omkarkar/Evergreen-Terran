@@ -1,0 +1,210 @@
+import streamlit as st
+import pandas as pd
+import duckdb
+import joblib
+from pathlib import Path
+
+st.set_page_config(page_title="Agri-Fin Yield Dashboard", layout="wide")
+
+DB_PATH = Path("agri_fin.duckdb")
+CSV_PATH = Path("training_yield_v2.csv")
+MODEL_PATH = Path("yield_model_rf_v2.pkl")
+FI_PATH = Path("feature_importance_v2.csv")
+GEO_PATH = Path("data/asia_countries.geojson")
+
+# ---------- cached loaders ----------
+@st.cache_resource
+def get_con():
+    return duckdb.connect(DB_PATH.as_posix()) if DB_PATH.exists() else None
+
+@st.cache_data
+def load_training():
+    if CSV_PATH.exists():
+        df = pd.read_csv(CSV_PATH)
+        if "year_key" in df: df["year_key"] = pd.to_numeric(df["year_key"], errors="coerce")
+        return df
+    return pd.DataFrame()
+
+@st.cache_resource
+def load_model():
+    return joblib.load(MODEL_PATH) if MODEL_PATH.exists() else None
+
+@st.cache_data
+def load_feature_importance():
+    if FI_PATH.exists():
+        fi = pd.read_csv(FI_PATH, index_col=0)
+        fi.columns = ["importance"]
+        return fi.sort_values("importance", ascending=False)
+    return pd.DataFrame()
+
+# ---------- data ----------
+con = get_con()
+df_train = load_training()
+model = load_model()
+fi = load_feature_importance()
+
+st.title(" Agri-Finance: Yield Explorer")
+
+# ---------- filters ----------
+if con is not None:
+    try:
+        regions = con.sql("SELECT DISTINCT region_key FROM feature_store ORDER BY 1").df()["region_key"].dropna().tolist()
+        crops   = con.sql("SELECT DISTINCT crop FROM feature_store ORDER BY 1").df()["crop"].dropna().tolist()
+        years   = con.sql("SELECT DISTINCT year_key FROM feature_store ORDER BY 1").df()["year_key"].dropna().tolist()
+    except Exception:
+        regions, crops, years = [], [], []
+else:
+    regions = sorted(df_train["region_key"].dropna().unique().tolist()) if "region_key" in df_train else []
+    crops   = sorted(df_train["crop"].dropna().unique().tolist()) if "crop" in df_train else []
+    years   = sorted(pd.Series(df_train["year_key"]).dropna().unique().tolist()) if "year_key" in df_train else []
+
+region = st.sidebar.selectbox("Region (country)", options=regions or ["(none)"])
+crop   = st.sidebar.selectbox("Crop", options=crops or ["(none)"])
+if years:
+    yr_min, yr_max = int(min(years)), int(max(years))
+    year_rng = st.sidebar.slider("Year range", yr_min, yr_max, (yr_min, yr_max))
+else:
+    year_rng = (None, None)
+
+# ---------- tabs ----------
+tab1, tab2, tab3, tab4 = st.tabs([" Explore", " What-If Prediction", " Feature Importance", " Map (Asia)"])
+
+with tab1:
+    st.subheader("Data Preview")
+    if con is not None:
+        q = """
+        SELECT * FROM feature_store
+        WHERE region_key = ? AND crop = ?
+        ORDER BY year_key
+        """
+        try:
+            df_view = con.sql(q, [region, crop]).df()
+        except Exception:
+            df_view = pd.DataFrame()
+    else:
+        df_view = df_train.copy()
+        if not df_view.empty:
+            if region and "region_key" in df_view: df_view = df_view[df_view["region_key"] == region]
+            if crop and "crop" in df_view: df_view = df_view[df_view["crop"] == crop]
+            if "year_key" in df_view and year_rng[0] is not None:
+                df_view = df_view[(df_view["year_key"] >= year_rng[0]) & (df_view["year_key"] <= year_rng[1])]
+            df_view = df_view.sort_values("year_key", na_position="last")
+
+    if df_view.empty:
+        st.info("No rows for this selection. Try a different region/crop.")
+    else:
+        st.dataframe(df_view.head(500), use_container_width=True)
+        c1, c2 = st.columns(2)
+        if "year_key" in df_view:
+            if "target_yield" in df_view.columns:
+                with c1: st.line_chart(df_view.set_index("year_key")["target_yield"], height=260)
+            wx_cols = [c for c in ["rain_mm_year","temp_mean_year"] if c in df_view.columns]
+            if wx_cols:
+                with c2: st.line_chart(df_view.set_index("year_key")[wx_cols], height=260)
+
+with tab2:
+    st.subheader("What-If Prediction")
+    if model is None:
+        st.warning("Model file not found (yield_model_rf_v2.pkl). Train the model first.")
+    else:
+        base = df_train.copy()
+        if not base.empty:
+            if "region_key" in base: base = base[base["region_key"] == region] if region else base
+            if "crop" in base: base = base[base["crop"] == crop] if crop else base
+
+        def med(col): 
+            return float(base[col].median()) if col in base and not base[col].isna().all() else 0.0
+
+        cols = st.columns(3)
+        with cols[0]:
+            soil_pH = st.number_input("Soil pH", value=round(med("soil_pH"),2))
+            soil_soc = st.number_input("Soil SOC (g/kg)", value=round(med("soil_soc"),2))
+        with cols[1]:
+            soil_n = st.number_input("Soil Nitrogen (g/kg)", value=round(med("soil_nitrogen"),2))
+            rain = st.number_input("Annual Rainfall (mm)", value=round(med("rain_mm_year"),2))
+        with cols[2]:
+            tavg = st.number_input("Mean Temp (C)", value=round(med("temp_mean_year"),2))
+
+        if st.button("Predict"):
+            X = pd.DataFrame([{
+                "soil_pH": soil_pH,
+                "soil_soc": soil_soc,
+                "soil_nitrogen": soil_n,
+                "rain_mm_year": rain,
+                "temp_mean_year": tavg
+            }])
+            pred = float(model.predict(X)[0])
+            st.success(f"Predicted Yield: **{pred:.2f} t/ha**")
+
+with tab3:
+    st.subheader("Feature Importance")
+    if fi.empty:
+        st.info("Train the model and ensure feature_importance_v2.csv exists.")
+    else:
+        st.bar_chart(fi["importance"], height=260)
+        st.dataframe(fi, use_container_width=True)
+
+with tab4:
+    st.subheader("Asia Choropleth")
+    if not GEO_PATH.exists():
+        st.info("GeoJSON not found. Expected: data/asia_countries.geojson")
+    else:
+        import geopandas as gpd
+        import folium
+        from streamlit_folium import st_folium
+
+        gdf = gpd.read_file(GEO_PATH)
+        # latest per country from training CSV
+        if df_train.empty:
+            st.warning("training_yield_v2.csv not loaded. Map will be empty.")
+            latest = pd.DataFrame(columns=["ADMIN","target_yield","rain_mm_year"])
+        else:
+            tmp = df_train.dropna(subset=["region_key","year_key"]).copy()
+            tmp["year_key"] = pd.to_numeric(tmp["year_key"], errors="coerce")
+            tmp = tmp.dropna(subset=["year_key"])
+            idx = tmp.groupby("region_key")["year_key"].idxmax()
+            latest = tmp.loc[idx, ["region_key","target_yield","rain_mm_year","temp_mean_year"]]
+            latest = latest.rename(columns={"region_key":"ADMIN"})
+
+        # name fixes for common mismatches
+        name_fix = {
+            "Viet Nam": "Vietnam",
+            "Korea, Republic of": "South Korea",
+            "Korea, Democratic People's Republic of": "North Korea",
+            "Lao PDR": "Laos",
+            "Timor-Leste": "East Timor",
+            "Russian Federation": "Russia",
+            "Iran (Islamic Republic of)": "Iran",
+            "Syrian Arab Republic": "Syria",
+            "Türkiye": "Turkey",
+        }
+        if "ADMIN" in gdf.columns:
+            gdf["ADMIN"] = gdf["ADMIN"].astype(str).replace(name_fix)
+
+        # metric selector
+        metric = st.radio("Map metric", ["Actual Yield", "Rainfall (mm)", "Mean Temp (C)"], horizontal=True)
+        val_col = {"Actual Yield":"target_yield","Rainfall (mm)":"rain_mm_year","Mean Temp (C)":"temp_mean_year"}[metric]
+
+        merged = gdf.merge(latest, on="ADMIN", how="left")
+        legend = "Yield (t/ha)" if metric == "Actual Yield" else metric
+        m = folium.Map(location=[23, 90], zoom_start=3, tiles="cartodbpositron")
+        ch = folium.Choropleth(
+            geo_data=merged.to_json(),
+            data=merged,
+            columns=["ADMIN", val_col],
+            key_on="feature.properties.ADMIN",
+            fill_color="YlGn",
+            fill_opacity=0.85,
+            line_opacity=0.25,
+            nan_fill_color="lightgrey",
+            legend_name=legend
+        )
+        ch.add_to(m)
+        folium.GeoJsonTooltip(
+            fields=["ADMIN", val_col],
+            aliases=["Country", legend],
+            localize=True,
+            sticky=False
+        ).add_to(ch.geojson)
+
+        st_folium(m, width=1100, height=620)

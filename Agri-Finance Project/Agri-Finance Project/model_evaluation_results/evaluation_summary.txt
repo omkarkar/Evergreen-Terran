@@ -1,0 +1,36 @@
+EVERGREEN TERRAN
+YIELD MODEL TRAINING AND EVALUATION RESULTS
+======================================================================
+
+Selected Model: random_forest
+
+DATASET INFORMATION
+----------------------------------------
+Raw yield_panel rows: 27768
+Usable modelling samples: 19053
+Training samples: 15242
+Testing samples: 3811
+Train/Test split: 80/20
+Random state: 42
+Cross-validation: 5-fold
+
+MODEL COMPARISON
+----------------------------------------
+            Model  CV_RMSE_Mean  CV_RMSE_Std
+    random_forest      3.133906     0.185017
+          xgboost      5.051588     0.090291
+         lightgbm      5.146286     0.037516
+gradient_boosting      8.390613     0.097296
+          svr_rbf     14.484477     0.358977
+
+TRAINING PERFORMANCE
+----------------------------------------
+MAE: 0.481 t/ha
+RMSE: 1.065 t/ha
+R2: 0.994
+
+TEST PERFORMANCE
+----------------------------------------
+MAE: 1.252 t/ha
+RMSE: 2.938 t/ha
+R2: 0.952

@@ -1,0 +1,154 @@
+,importance
+soil_soc,0.16472837986416553
+crop_tomatoes,0.08016925834576488
+crop_cucumbers and gherkins,0.07444451330901138
+crop_sugar cane,0.07257490152644876
+crop_cabbages,0.062980451005837
+crop_watermelons,0.0565745765124709
+crop_carrots and turnips,0.04802052917023552
+"crop_onions and shallots, dry (excluding dehydrated)",0.04622716145256399
+crop_potatoes,0.0428018064727421
+crop_bananas,0.03539429782478315
+crop_cantaloupes and other melons,0.03471302372600618
+"crop_pumpkins, squash and gourds",0.03324997232818468
+soil_nitrogen,0.03238932840443382
+soil_pH,0.029308342967244792
+crop_eggplants (aubergines),0.027212660952047198
+crop_pineapples,0.026087739842496446
+temp_mean_year,0.02550866524604521
+crop_sugar beet,0.02533446391935014
+rain_mm_year,0.01343820859116695
+"crop_chillies and peppers, green (capsicum spp. and pimenta spp.)",0.009352048213614787
+crop_barley,0.006354792934309708
+crop_wheat,0.006096699460403371
+"crop_other vegetables, fresh n.e.c.",0.00470691517541647
+crop_sesame seed,0.004188633399880532
+crop_grapes,0.004182466168193705
+"crop_lentils, dry",0.0038837426934178318
+crop_vetches,0.003073663935236437
+crop_cauliflowers and broccoli,0.003029413538510264
+"crop_pistachios, in shell",0.002439730970978884
+crop_linseed,0.0021460595453403255
+crop_olives,0.00205965820807227
+"crop_almonds, in shell",0.0018097979779781606
+crop_unmanufactured tobacco,0.0016332240943113196
+crop_safflower seed,0.0015550488016072507
+crop_millet,0.001274159708069179
+crop_other pulses n.e.c.,0.0008864623276179066
+crop_rape or colza seed,0.0008655016224309305
+"crop_peas, green",0.0008270675011674523
+"crop_other stimulant, spice and aromatic crops, n.e.c.",0.0006923591779390506
+"crop_chick peas, dry",0.0006236562438894585
+crop_sweet potatoes,0.00047134505755354236
+crop_papayas,0.00042451480053557107
+crop_figs,0.0004210186827348852
+"crop_broad beans and horse beans, green",0.0004191497633882371
+crop_locust beans (carobs),0.0004116323014287412
+"crop_peas, dry",0.0004028117184862433
+crop_rice,0.00038571295508578446
+crop_oats,0.0003274369802256985
+"crop_other nuts (excluding wild edible nuts and groundnuts), in shell, n.e.c.",0.0003046861035885461
+crop_dates,0.0002797585117897466
+crop_sorghum,0.00027658243910340277
+crop_cereals n.e.c.,0.0002668694124054266
+crop_maize (corn),0.00025468078363538756
+"crop_mangoes, guavas and mangosteens",0.000252226152413158
+"crop_seed cotton, unginned",0.00024642225245786504
+crop_pomelos and grapefruits,0.0002159949028404191
+"crop_other tropical fruits, n.e.c.",0.00020765547474682985
+crop_artichokes,0.00019768202359985
+crop_soya beans,0.00019086733806092225
+"crop_pepper (piper spp.), raw",0.00016955422686144967
+"crop_other oil seeds, n.e.c.",0.000158405237900095
+crop_lemons and limes,0.000149622578177456
+crop_plums and sloes,0.00013092544376801596
+"crop_groundnuts, excluding shelled",0.00011504090747529824
+"crop_other fruits, n.e.c.",9.214645472389548e-05
+"crop_onions and shallots, green",9.032010365066625e-05
+crop_okra,4.2712999904437156e-05
+"crop_beans, dry",4.014470166308257e-05
+"crop_tangerines, mandarins, clementines",2.7388382322749793e-05
+crop_oranges,2.7276854805261762e-05
+crop_green garlic,2.6533913417058514e-05
+"crop_other beans, green",2.5969826745203847e-05
+"crop_other citrus fruit, n.e.c.",1.786024153370242e-05
+"crop_hazelnuts, in shell",1.2506893312255699e-05
+crop_persimmons,1.1059926012769045e-05
+crop_apricots,9.420600647938989e-06
+crop_peaches and nectarines,9.028106956129543e-06
+"crop_walnuts, in shell",8.043850055278113e-06
+crop_apples,7.954688573281593e-06
+crop_buckwheat,7.362224266124859e-06
+crop_sunflower seed,6.599947885090809e-06
+crop_lettuce and chicory,6.5943946092669926e-06
+"crop_coconuts, in shell",6.258130252392163e-06
+crop_cherries,2.9498862578517652e-06
+crop_leeks and other alliaceous vegetables,6.358657797290976e-07
+crop_strawberries,6.194369302191965e-07
+crop_other berries and fruits of the genus vaccinium n.e.c.,3.3464339610069657e-07
+crop_spinach,2.987186530346227e-07
+"crop_abaca, manila hemp, raw",0.0
+crop_canary seed,0.0
+"crop_broad beans and horse beans, dry",0.0
+crop_blueberries,0.0
+crop_asparagus,0.0
+crop_avocados,0.0
+crop_areca nuts,0.0
+"crop_agave fibres, raw, n.e.c.",0.0
+"crop_anise, badian, coriander, cumin, caraway, fennel and juniper berries, raw",0.0
+crop_hempseed,0.0
+"crop_kenaf, and other textile bast fibres, raw or retted",0.0
+crop_kiwi fruit,0.0
+"crop_jute, raw or retted",0.0
+crop_hop cones,0.0
+"crop_ginger, raw",0.0
+"crop_chestnuts, in shell",0.0
+crop_lupins,0.0
+crop_cocoa beans,0.0
+"crop_cloves (whole stems), raw",0.0
+"crop_cinnamon and cinnamon-tree flowers, raw",0.0
+"crop_chillies and peppers, dry (capsicum spp., pimenta spp.), raw",0.0
+crop_chicory roots,0.0
+"crop_cassava, fresh",0.0
+"crop_cashew nuts, in shell",0.0
+"crop_coffee, green",0.0
+"crop_edible roots and tubers with high starch or inulin content, n.e.c., fresh",0.0
+crop_currants,0.0
+"crop_cow peas, dry",0.0
+crop_cranberries,0.0
+crop_gooseberries,0.0
+crop_green corn (maize),0.0
+"crop_flax, raw or retted",0.0
+crop_castor oil seeds,0.0
+crop_mustard seed,0.0
+crop_natural rubber in primary forms,0.0
+crop_mixed grain,0.0
+crop_melonseed,0.0
+"crop_nutmeg, mace, cardamoms, raw",0.0
+crop_oil palm fruit,0.0
+crop_kapok fruit,0.0
+crop_poppy seed,0.0
+crop_other stone fruits,0.0
+crop_other pome fruits,0.0
+crop_other sugar crops n.e.c.,0.0
+"crop_other fibre crops, raw, n.e.c.",0.0
+"crop_pigeon peas, dry",0.0
+"crop_peppermint, spearmint",0.0
+crop_plantains and cooking bananas,0.0
+crop_pears,0.0
+"crop_ramie, raw or retted",0.0
+crop_quinoa,0.0
+crop_quinces,0.0
+crop_string beans,0.0
+crop_raspberries,0.0
+crop_sour cherries,0.0
+crop_rye,0.0
+"crop_sisal, raw",0.0
+"crop_true hemp, raw or retted",0.0
+crop_triticale,0.0
+crop_tea leaves,0.0
+crop_taro,0.0
+crop_tallowtree seeds,0.0
+crop_tung nuts,0.0
+"crop_vanilla, raw",0.0
+crop_yams,0.0

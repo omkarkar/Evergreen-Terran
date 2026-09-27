@@ -1,0 +1,192 @@
+Feature,Importance
+num__soil_soc_top30_gkg,0.10785860644573435
+cat__crop_Sugar Cane,0.08303659873031516
+cat__crop_Tomatoes,0.057202678611301544
+cat__crop_Cucumbers And Gherkins,0.04787985453008685
+num__fert_k_kg_ha,0.04346925792277474
+num__soil_n_top30_gkg,0.03172578764023446
+cat__crop_Bananas,0.0309755208013362
+num__soil_ph_top30_mean,0.02917833834805044
+cat__crop_Cabbages,0.02678479468809543
+"cat__crop_Chillies And Peppers, Green (Capsicum Spp. And Pimenta Spp.)",0.02493409830860787
+cat__crop_Carrots And Turnips,0.0238209383299305
+cat__crop_Watermelons,0.023128423181585155
+cat__crop_Sugar Beet,0.022903954327445318
+num__fert_n_kg_ha,0.02223152607086776
+cat__crop_Eggplants (Aubergines),0.020433369952185084
+num__tavg_c,0.01753517195692844
+"cat__crop_Pumpkins, Squash And Gourds",0.01538906691268235
+num__fert_p_kg_ha,0.014711348740007141
+"cat__crop_Onions And Shallots, Dry (Excluding Dehydrated)",0.014694169947900616
+cat__crop_Potatoes,0.01436559025080367
+cat__crop_Papayas,0.014108213999863641
+num__tavg_c_anom,0.014004073179934063
+cat__crop_Cantaloupes And Other Melons,0.011685566634910912
+cat__country_Bahrain,0.011517455806021893
+cat__country_Indonesia,0.010898239235778704
+"cat__crop_Other Vegetables, Fresh N.E.C.",0.010750799858613165
+cat__crop_Pineapples,0.010361382392222672
+num__rh_pct,0.010189845243968898
+cat__crop_Pomelos And Grapefruits,0.010014727686946749
+cat__crop_Lettuce And Chicory,0.00936205079372518
+cat__crop_Cauliflowers And Broccoli,0.009333322115744131
+cat__country_Uzbekistan,0.008900551603392268
+num__prcp_mm,0.00847366097475827
+cat__country_Japan,0.008323538076541077
+cat__crop_Strawberries,0.006735176921951426
+num__year,0.006641702820551328
+cat__country_Lebanon,0.006150295160987758
+cat__crop_Oranges,0.005294257379032718
+cat__crop_Spinach,0.005158377997674439
+"cat__crop_Cassava, Fresh",0.005066025311302778
+cat__country_Armenia,0.004924902383038567
+"cat__crop_Edible Roots And Tubers With High Starch Or Inulin Content, N.E.C., Fresh",0.004716728952148648
+cat__crop_Lemons And Limes,0.004660404848033266
+cat__crop_Apples,0.00464566202778671
+"cat__crop_Other Nuts (Excluding Wild Edible Nuts And Groundnuts), In Shell, N.E.C.",0.004326599765091867
+cat__crop_Green Garlic,0.004293289156112924
+"cat__crop_Onions And Shallots, Green",0.004169361102210565
+"cat__crop_Tangerines, Mandarins, Clementines",0.0038536254132161213
+"cat__crop_Other Fruits, N.E.C.",0.0035835513853876067
+cat__crop_Grapes,0.0035492870371475584
+"cat__crop_Other Citrus Fruit, N.E.C.",0.0034235388322208632
+cat__country_Israel,0.0031734021145279293
+cat__crop_Leeks And Other Alliaceous Vegetables,0.003142736747683214
+num__prcp_mm_anom,0.003106744192403147
+cat__crop_Artichokes,0.0030976351568685395
+cat__crop_Green Corn (Maize),0.0030521769344816867
+cat__crop_Sweet Potatoes,0.0029467015800883588
+cat__country_China,0.002939991346881132
+cat__country_Malaysia,0.0027895452623756946
+cat__crop_Pears,0.002778401946554332
+cat__crop_Peaches And Nectarines,0.0025166197223942693
+"cat__crop_Mangoes, Guavas And Mangosteens",0.0023610924653665872
+cat__crop_Kiwi Fruit,0.0021817449267162053
+"cat__crop_Ginger, Raw",0.0020856845609611356
+cat__crop_Persimmons,0.0019485679378583778
+cat__crop_Chicory Roots,0.0019339122422131563
+"cat__crop_Other Beans, Green",0.001884394265268088
+cat__crop_Oil Palm Fruit,0.0018821362567093833
+"cat__crop_Broad Beans And Horse Beans, Green",0.0018066752874109507
+cat__country_Jordan,0.001784231870189429
+cat__crop_Dates,0.0017728123578500303
+cat__country_Singapore,0.001646635340610679
+cat__crop_Plums And Sloes,0.0015346046650458764
+cat__crop_Okra,0.0014543959909982954
+cat__country_Bangladesh,0.0014490778348979613
+cat__crop_Maize (Corn),0.0014289108844544806
+cat__country_Kyrgyzstan,0.0013846870913685751
+cat__country_Thailand,0.0013582242682654132
+cat__crop_Taro,0.0013187765327632866
+cat__crop_Figs,0.0013113795260673703
+"cat__crop_Coconuts, In Shell",0.0012699920646902828
+"cat__crop_Peas, Green",0.0012042608339255332
+cat__country_Kuwait,0.0011691910317937367
+cat__crop_Plantains And Cooking Bananas,0.0011322698835662167
+cat__crop_Quinces,0.0011136814432720354
+cat__crop_Millet,0.0010846862320533562
+cat__country_Kazakhstan,0.0010212575511083935
+cat__crop_Other Pulses N.E.C.,0.001019403130486043
+cat__country_Bhutan,0.0009310903245566852
+cat__crop_Apricots,0.0008986968905552784
+cat__country_Azerbaijan,0.0008926621925152631
+cat__country_India,0.0008880716162653652
+"cat__crop_Other Tropical Fruits, N.E.C.",0.0008631752349790052
+cat__country_Myanmar,0.0008405157036251233
+cat__country_Afghanistan,0.0008368372949459104
+"cat__crop_Other Stimulant, Spice And Aromatic Crops, N.E.C.",0.0008360727497184249
+cat__crop_Wheat,0.0008259436214390542
+cat__crop_Other Berries And Fruits Of The Genus Vaccinium N.E.C.,0.0008112836499693947
+cat__crop_Yams,0.0008074213307818059
+cat__country_Cambodia,0.000796299939890558
+cat__crop_Other Sugar Crops N.E.C.,0.0007926285493046781
+cat__country_Lao People's Democratic Republic,0.0007481663890204962
+cat__crop_Avocados,0.0007374104781375377
+cat__crop_Barley,0.0007276097803384027
+cat__country_Mongolia,0.0006274696934080601
+cat__crop_Olives,0.0006156748672967642
+cat__country_Syrian Arab Republic,0.0006104438797018896
+cat__crop_String Beans,0.0006063687685264195
+"cat__crop_Almonds, In Shell",0.0006004589669428899
+cat__country_Georgia,0.0005944109762609804
+cat__country_Pakistan,0.0005750769432353518
+cat__country_Turkmenistan,0.0005531137493972866
+"cat__crop_Peppermint, Spearmint",0.0005482114622707222
+cat__crop_Currants,0.0005448151813175276
+cat__crop_Sorghum,0.0005229427983450403
+cat__country_Qatar,0.0004802036435939945
+cat__crop_Cherries,0.000470222261391041
+cat__country_Sri Lanka,0.00043867348012021663
+cat__crop_Other Stone Fruits,0.0004319211499488383
+cat__country_Nepal,0.00042712686562253335
+cat__crop_Rice,0.00041905370565830074
+cat__country_Viet Nam,0.00040436605310088407
+cat__crop_Asparagus,0.00040394173218055864
+"cat__crop_Groundnuts, Excluding Shelled",0.00035180694635916744
+cat__crop_Tea Leaves,0.0003459621892265327
+cat__crop_Sour Cherries,0.0002771070062304298
+"cat__crop_Other Fibre Crops, Raw, N.E.C.",0.0002504707256871915
+"cat__crop_Walnuts, In Shell",0.00023967479726379838
+"cat__crop_Beans, Dry",0.00023336905295140398
+cat__crop_Areca Nuts,0.00019576023320212694
+cat__crop_Locust Beans (Carobs),0.0001895140354013259
+cat__country_Saudi Arabia,0.00015083595938336479
+"cat__crop_Jute, Raw Or Retted",0.00014791292543154746
+cat__crop_Unmanufactured Tobacco,0.00012763771260514912
+"cat__crop_Lentils, Dry",0.0001178626142628645
+cat__crop_Mustard Seed,0.00011436106099185742
+cat__country_Democratic People's Republic of Korea,0.00011020707589677599
+cat__crop_Sesame Seed,0.00010978719426669446
+cat__crop_Rye,0.0001085828130972321
+"cat__crop_Chillies And Peppers, Dry (Capsicum Spp., Pimenta Spp.), Raw",0.0001084451734403742
+cat__crop_Vetches,0.00010765927434567903
+"cat__crop_Pistachios, In Shell",9.283799110752753e-05
+cat__crop_Raspberries,9.079165948670927e-05
+"cat__crop_Seed Cotton, Unginned",7.973038777214295e-05
+"cat__crop_Chick Peas, Dry",7.311098623665428e-05
+cat__crop_Sunflower Seed,5.516864584488007e-05
+"cat__crop_Pepper (Piper Spp.), Raw",5.368679968019659e-05
+cat__crop_Gooseberries,5.3020490354401964e-05
+cat__crop_Blueberries,4.754691417373392e-05
+"cat__crop_Kenaf, And Other Textile Bast Fibres, Raw Or Retted",4.657323602383981e-05
+"cat__crop_Peas, Dry",4.3517448002198256e-05
+cat__crop_Cereals N.E.C.,3.754596573546703e-05
+"cat__crop_Broad Beans And Horse Beans, Dry",3.4100251369112336e-05
+cat__crop_Soya Beans,3.103746230085615e-05
+"cat__crop_Chestnuts, In Shell",3.075877791567161e-05
+cat__crop_Linseed,2.8985687213289358e-05
+"cat__crop_Sisal, Raw",2.4996728962026893e-05
+"cat__crop_Other Oil Seeds, N.E.C.",2.2749297119648084e-05
+cat__crop_Other Pome Fruits,2.179670288164761e-05
+cat__crop_Oats,2.1529788521719196e-05
+"cat__crop_True Hemp, Raw Or Retted",2.1399445552123648e-05
+cat__crop_Safflower Seed,1.995841929223946e-05
+"cat__crop_Nutmeg, Mace, Cardamoms, Raw",1.8734742021147723e-05
+"cat__crop_Hazelnuts, In Shell",1.784764395750532e-05
+"cat__crop_Vanilla, Raw",1.7052512628527872e-05
+cat__crop_Kapok Fruit,1.6149334865582062e-05
+cat__crop_Buckwheat,1.4711268589194507e-05
+cat__crop_Rape Or Colza Seed,1.4607261499957338e-05
+cat__crop_Cranberries,1.4532176056812879e-05
+"cat__crop_Ramie, Raw Or Retted",1.3513642629560057e-05
+"cat__crop_Coffee, Green",1.2459476670229893e-05
+cat__crop_Cocoa Beans,1.2441143741920735e-05
+cat__crop_Natural Rubber In Primary Forms,1.0529765632948427e-05
+"cat__crop_Cow Peas, Dry",1.0272250578230162e-05
+"cat__crop_Cloves (Whole Stems), Raw",7.620001876584776e-06
+"cat__crop_Cashew Nuts, In Shell",5.637154097524139e-06
+cat__crop_Hop Cones,4.644257187531378e-06
+"cat__crop_Anise, Badian, Coriander, Cumin, Caraway, Fennel And Juniper Berries, Raw",4.4731559212512955e-06
+cat__crop_Castor Oil Seeds,4.337631161363292e-06
+"cat__crop_Cinnamon And Cinnamon-Tree Flowers, Raw",2.0749832852844704e-06
+cat__crop_Canary Seed,1.8245448241957347e-06
+cat__crop_Mixed Grain,1.8048698836563156e-06
+cat__crop_Tung Nuts,1.5654040449038093e-06
+cat__crop_Tallowtree Seeds,1.4407068926356845e-06
+cat__crop_Lupins,1.2786861845991024e-06
+cat__crop_Triticale,9.55923846645275e-07
+cat__crop_Melonseed,7.580362620800203e-07
+"cat__crop_Abaca, Manila Hemp, Raw",3.668726247164516e-07
+"cat__crop_Pigeon Peas, Dry",1.0135393128311719e-07
+cat__crop_Hempseed,7.169880737236394e-08
+cat__crop_Quinoa,6.042698591723076e-08

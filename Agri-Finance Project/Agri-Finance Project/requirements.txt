@@ -1,0 +1,11 @@
+scikit-learn
+pandas
+numpy
+SQLAlchemy
+psycopg2-binary
+joblib
+xgboost
+lightgbm
+fastapi
+uvicorn
+openpyxl
